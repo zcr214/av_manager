@@ -20,7 +20,8 @@ class sqlite3_test():
             ( id CHAR(50) primary key NOT NULL,
               name TEXT NOT NULL,
               director CHAR(50),
-              starId
+              starId CHAR(50),
+              org CHAR(50),
               size INT NOT NULL,
               videoPath TEXT,
               coverPath TEXT,
@@ -60,7 +61,6 @@ class sqlite3_test():
         try:
             ret=c.execute(sqlstr)
             self.conn.commit()
-            print(ret)
             for row in ret:
                 print(row)
         except Exception as e:
